@@ -11,8 +11,7 @@ using namespace v8;
 using namespace std;
 
 void InitImageHash(Handle<Object> exports);
-NAN_METHOD(ImageHashSync);
-NAN_METHOD(ImageHashAsync);
+NAN_METHOD(ImageHash);
 
 class ImageHashWorker : public NanAsyncWorker {
   public:
@@ -25,7 +24,6 @@ class ImageHashWorker : public NanAsyncWorker {
   private:
     string filename;
 
-    string errmsg;
     ulong64 returnHash;
 };
 

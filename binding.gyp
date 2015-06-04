@@ -1,5 +1,4 @@
 {
-  'includes': [ 'deps/common.gyp' ],
   'targets': [
     {
       'target_name': 'pHashBinding',
@@ -18,23 +17,22 @@
       'sources': [
         'src/Helper.cpp',
         'src/ImageHash.cpp',
+        'src/VideoHash.cpp',
         'src/phash.cpp'
       ],
+      'libraries': [
+        '-ljpeg',
+        '-lpng',
+        '-lavformat',
+        '-lavcodec',
+        '-lswscale',
+        '-lswresample'
+      ],
+      'cflags': ['-fexceptions'],
+      'cflags_cc': ['-fexceptions'],
       'dependencies': [
-        'deps/zlib/zlib.gyp:zlib',
-        'deps/libpng/libpng.gyp:libpng',
-        'deps/libjpeg/libjpeg.gyp:libjpeg',
-        'deps/pHash/pHash.gyp:phash',
-      ],
-      'conditions': [
-        ['OS=="win"',
-          {
-            'include_dirs': [
-              'deps/pHash/win32/',
-            ],
-          },
-        ],
-      ],
+        'deps/pHash/pHash.gyp:phash'
+      ]
     }
   ]
 }

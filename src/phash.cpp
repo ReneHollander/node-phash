@@ -24,12 +24,14 @@
 #include <nan.h>
 
 #include "ImageHash.h"
+#include "VideoHash.h"
 
 using namespace v8;
 
 void Init(Handle<Object> exports) {
   NanScope();
   InitImageHash(exports);
+  InitVideoHash(exports);
 }
 
 NODE_MODULE(pHashBinding, Init)

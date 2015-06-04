@@ -1,5 +1,4 @@
 {
-  'includes': [ '../common.gyp' ],
   'targets': [
     {
       'target_name': 'phash',
@@ -11,27 +10,15 @@
         'cimg_use_jpeg',
       ],
       'include_dirs': [
-        '.',
-        '../libpng',
-        '../libjpeg',
+        '.'
       ],
+      'cflags': ['-fexceptions'],
+      'cflags_cc': ['-fexceptions'],
       'sources': [
         './ph_fft.c',
-        './pHash.cpp',
-        './phcomplex.c',
-      ],
-      'conditions': [
-        ['OS=="win"',
-          {
-            'include_dirs': [
-              './win32/',
-            ],
-            'sources': [
-             './win32/dirent.c',
-            ],
-          },
-        ],
-      ],
+        './cimgffmpeg.cpp',
+        './pHash.cpp'
+      ]
     },
   ],
 }
