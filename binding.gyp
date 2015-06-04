@@ -15,7 +15,11 @@
         'deps/libjpeg',
         "<!(node -e \"require('nan')\")"
        ],
-      'sources': [ 'src/phash.cpp' ],
+      'sources': [
+        'src/Helper.cpp',
+        'src/ImageHash.cpp',
+        'src/phash.cpp'
+      ],
       'dependencies': [
         'deps/zlib/zlib.gyp:zlib',
         'deps/libpng/libpng.gyp:libpng',
@@ -34,4 +38,3 @@
     }
   ]
 }
-
