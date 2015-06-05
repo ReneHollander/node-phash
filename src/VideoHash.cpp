@@ -38,6 +38,9 @@ void VideoHashWorker::HandleOKCallback() {
 		obj->Set(NanNew<String>("higher"), NanNew<Number>(y));
 		array->Set(i, obj);
 	}
+
+	free(hashArray);
+	
 	Local<Value> argv[] = {
 		NanUndefined(),
 		array
